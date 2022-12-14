@@ -1,5 +1,4 @@
 import 'package:demo_app_task/core/viewModel/control_view_model.dart';
-import 'package:demo_app_task/utils/color_manager.dart';
 import 'package:demo_app_task/utils/utils.dart';
 import 'package:demo_app_task/view/widgets/bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
@@ -18,9 +17,9 @@ class ControlView extends GetWidget<ControlViewModel> {
         floatingActionButton: FloatingActionButton(
           backgroundColor: ColorManager.primary,
           onPressed: () {},
-          child: const Icon(
+          child: Icon(
             Icons.add_shopping_cart,
-            size: SizeManager.s40,
+            size: adjustValue(context, SizeManager.s30),
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

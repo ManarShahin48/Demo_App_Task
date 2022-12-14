@@ -1,9 +1,8 @@
 import 'package:demo_app_task/model/address_model.dart';
 import 'package:demo_app_task/model/category_model.dart';
-import 'package:demo_app_task/model/deal_model.dart';
 import 'package:demo_app_task/utils/utils.dart';
 import 'package:demo_app_task/view/widgets/category_shape.dart';
-import 'package:demo_app_task/view/widgets/deal_shap.dart';
+
 
 List<AddressModel> addresses = [
   AddressModel(
@@ -42,23 +41,5 @@ List<CategoryModel> categories = [
   ),
 ];
 
-//====================//
-List<DealModel> deals = [
-  DealModel(
-    name: 'Summer Sun Ice Cream',
-    num: 'Pieces 5',
-    location: '15 Min',
-    activePrice: '\$12',
-    discountPrice: '\$18',
-    shape: dealShape(ColorManager.steak),
-  ),
-  DealModel(
-    name: 'Summer Sun Ice Cream',
-    num: 'Pieces 5',
-    location: '15 Min',
-    activePrice: '\$12',
-    discountPrice: '\$18',
-    shape: dealShape(ColorManager.fish),
-  )
-];
+
 

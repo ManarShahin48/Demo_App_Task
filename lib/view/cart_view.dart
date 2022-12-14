@@ -5,7 +5,7 @@ import 'package:demo_app_task/view/widgets/cart_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CartView extends StatelessWidget {
+class CartView extends GetWidget<CartViewModel> {
   const CartView({Key? key}) : super(key: key);
 
   @override
@@ -20,7 +20,7 @@ class CartView extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          addressBar(context,'Oxford Street'),
+          addressBar(context, 'Oxford Street'),
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: PaddingManager.p20,
@@ -30,7 +30,10 @@ class CartView extends StatelessWidget {
               'Cart',
               style: getPoppinsBoldStyle(
                 color: ColorManager.titleColor,
-                fontSize: adjustValue(context, SizeManager.s20,),
+                fontSize: adjustValue(
+                  context,
+                  SizeManager.s20,
+                ),
               ),
             ),
           ),
@@ -46,8 +49,14 @@ class CartView extends StatelessWidget {
                       controller.decrement1();
                     },
                     child: Container(
-                      height: adjustHeightValue(context, SizeManager.s30,),
-                      width: adjustWidthValue(context, SizeManager.s30,),
+                      height: adjustHeightValue(
+                        context,
+                        SizeManager.s30,
+                      ),
+                      width: adjustWidthValue(
+                        context,
+                        SizeManager.s30,
+                      ),
                       decoration: const BoxDecoration(
                         color: ColorManager.fish,
                         borderRadius: BorderRadius.all(
@@ -81,8 +90,14 @@ class CartView extends StatelessWidget {
                       controller.increment1();
                     },
                     child: Container(
-                      height: adjustHeightValue(context, SizeManager.s30,),
-                      width: adjustWidthValue(context, SizeManager.s30,),
+                      height: adjustHeightValue(
+                        context,
+                        SizeManager.s30,
+                      ),
+                      width: adjustWidthValue(
+                        context,
+                        SizeManager.s30,
+                      ),
                       decoration: const BoxDecoration(
                         color: ColorManager.fish,
                         borderRadius: BorderRadius.all(
@@ -119,8 +134,14 @@ class CartView extends StatelessWidget {
                       controller.decrement2();
                     },
                     child: Container(
-                      height: adjustHeightValue(context, SizeManager.s30,),
-                      width: adjustWidthValue(context, SizeManager.s30,),
+                      height: adjustHeightValue(
+                        context,
+                        SizeManager.s30,
+                      ),
+                      width: adjustWidthValue(
+                        context,
+                        SizeManager.s30,
+                      ),
                       decoration: const BoxDecoration(
                         color: ColorManager.fish,
                         borderRadius: BorderRadius.all(
@@ -154,8 +175,14 @@ class CartView extends StatelessWidget {
                       controller.increment2();
                     },
                     child: Container(
-                      height: adjustHeightValue(context, SizeManager.s30,),
-                      width: adjustWidthValue(context, SizeManager.s30,),
+                      height: adjustHeightValue(
+                        context,
+                        SizeManager.s30,
+                      ),
+                      width: adjustWidthValue(
+                        context,
+                        SizeManager.s30,
+                      ),
                       decoration: const BoxDecoration(
                         color: ColorManager.fish,
                         borderRadius: BorderRadius.all(
@@ -192,8 +219,14 @@ class CartView extends StatelessWidget {
                       controller.decrement3();
                     },
                     child: Container(
-                      height: adjustHeightValue(context, SizeManager.s30,),
-                      width: adjustWidthValue(context, SizeManager.s30,),
+                      height: adjustHeightValue(
+                        context,
+                        SizeManager.s30,
+                      ),
+                      width: adjustWidthValue(
+                        context,
+                        SizeManager.s30,
+                      ),
                       decoration: const BoxDecoration(
                         color: ColorManager.fish,
                         borderRadius: BorderRadius.all(
@@ -227,8 +260,14 @@ class CartView extends StatelessWidget {
                       controller.increment3();
                     },
                     child: Container(
-                      height: adjustHeightValue(context, SizeManager.s30,),
-                      width: adjustWidthValue(context, SizeManager.s30,),
+                      height: adjustHeightValue(
+                        context,
+                        SizeManager.s30,
+                      ),
+                      width: adjustWidthValue(
+                        context,
+                        SizeManager.s30,
+                      ),
                       decoration: const BoxDecoration(
                         color: ColorManager.fish,
                         borderRadius: BorderRadius.all(
@@ -265,8 +304,14 @@ class CartView extends StatelessWidget {
                       controller.decrement4();
                     },
                     child: Container(
-                      height: adjustHeightValue(context, SizeManager.s30,),
-                      width: adjustWidthValue(context, SizeManager.s30,),
+                      height: adjustHeightValue(
+                        context,
+                        SizeManager.s30,
+                      ),
+                      width: adjustWidthValue(
+                        context,
+                        SizeManager.s30,
+                      ),
                       decoration: const BoxDecoration(
                         color: ColorManager.fish,
                         borderRadius: BorderRadius.all(
@@ -300,8 +345,14 @@ class CartView extends StatelessWidget {
                       controller.increment4();
                     },
                     child: Container(
-                      height: adjustHeightValue(context, SizeManager.s30,),
-                      width: adjustWidthValue(context, SizeManager.s30,),
+                      height: adjustHeightValue(
+                        context,
+                        SizeManager.s30,
+                      ),
+                      width: adjustWidthValue(
+                        context,
+                        SizeManager.s30,
+                      ),
                       decoration: const BoxDecoration(
                         color: ColorManager.fish,
                         borderRadius: BorderRadius.all(

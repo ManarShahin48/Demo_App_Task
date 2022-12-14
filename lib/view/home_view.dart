@@ -1,12 +1,14 @@
 import 'package:demo_app_task/core/data.dart';
+import 'package:demo_app_task/core/viewModel/home_view_model.dart';
 import 'package:demo_app_task/utils/utils.dart';
 import 'package:demo_app_task/view/widgets/address_bar.dart';
 import 'package:demo_app_task/view/widgets/address_item.dart';
 import 'package:demo_app_task/view/widgets/category_item.dart';
 import 'package:demo_app_task/view/widgets/deal_item.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends GetView<HomeViewModel> {
   const HomeView({Key? key}) : super(key: key);
 
   @override
@@ -69,11 +71,9 @@ class HomeView extends StatelessWidget {
                 ),
               ),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   addressItem(context, addresses[0]),
-                  SizedBox(
-                    width: adjustWidthValue(context, SizeManager.s3),
-                  ),
                   addressItem(context, addresses[1]),
                 ],
               ),
@@ -86,7 +86,7 @@ class HomeView extends StatelessWidget {
                 ),
                 right: adjustValue(
                   context,
-                  PaddingManager.p20,
+                  PaddingManager.p10,
                 ),
                 top: adjustValue(
                   context,
@@ -160,24 +160,63 @@ class HomeView extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(
-                  left: adjustValue(
-                context,
-                PaddingManager.p20,
-              )),
-              child: SizedBox(
-                height: adjustHeightValue(context, SizeManager.s100),
-                child: ListView.separated(
-                  physics: const BouncingScrollPhysics(),
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => dealItem(deals[index]),
-                  itemCount: deals.length,
-                  separatorBuilder: (context, index) => SizedBox(
-                    width: adjustWidthValue(
-                      context,
-                      SizeManager.s10,
-                    ),
-                  ),
+              padding: EdgeInsets.symmetric(
+                horizontal: adjustWidthValue(
+                  context,
+                  PaddingManager.p20,
+                ),
+              ),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                physics: const BouncingScrollPhysics(),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    DealItem(
+                        color: ColorManager.steak,
+                        name: 'Summer Sun Ice Cream',
+                        num: '5 Pieces',
+                        location: '15 Min',
+                        iconBtn: Obx(() => IconButton(
+                              onPressed: () {
+                                controller.fav1.value =
+                                    !controller.fav1.value;
+                              },
+                              icon: Icon(
+                                controller.fav1.value
+                                    ? Icons.favorite_border
+                                    : Icons.favorite,
+                                color: controller.fav1.value
+                                    ? ColorManager.grey
+                                    : ColorManager.primary,
+                                size: SizeManager.s15,
+                              ),
+                            )),
+                        activePrice: '12\$',
+                        discountPrice: '18\$'),
+                    DealItem(
+                        color: ColorManager.fish,
+                        name: 'Summer Sun Ice Cream',
+                        num: '5 Pieces',
+                        location: '15 Min',
+                        iconBtn: Obx(() => IconButton(
+                              onPressed: () {
+                                controller.fav2.value =
+                                    !controller.fav2.value;
+                              },
+                              icon: Icon(
+                                controller.fav2.value
+                                    ? Icons.favorite_border
+                                    : Icons.favorite,
+                                color: controller.fav2.value
+                                    ? ColorManager.grey
+                                    : ColorManager.primary,
+                                size: SizeManager.s15,
+                              ),
+                            )),
+                        activePrice: '12\$',
+                        discountPrice: '18\$'),
+                  ],
                 ),
               ),
             ),
@@ -186,6 +225,10 @@ class HomeView extends StatelessWidget {
                 horizontal: adjustWidthValue(
                   context,
                   PaddingManager.p20,
+                ),
+                vertical: adjustHeightValue(
+                  context,
+                  PaddingManager.p10,
                 ),
               ),
               child: Container(

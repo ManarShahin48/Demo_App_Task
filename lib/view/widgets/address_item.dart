@@ -10,7 +10,7 @@ Widget addressItem(BuildContext context, AddressModel addressModel) {
     ),
     width: adjustWidthValue(
       context,
-      SizeManager.s162,
+      SizeManager.s150,
     ),
     decoration: BoxDecoration(
       color: ColorManager.white,
@@ -55,7 +55,7 @@ Widget addressItem(BuildContext context, AddressModel addressModel) {
                 color: ColorManager.titleColor,
                 fontSize: adjustValue(
                   context,
-                  FontSize.s12,
+                  FontSize.s10,
                 ),
               ),
             ),
@@ -66,7 +66,7 @@ Widget addressItem(BuildContext context, AddressModel addressModel) {
                 color: ColorManager.titleColor,
                 fontSize: adjustValue(
                   context,
-                  FontSize.s10,
+                  FontSize.s8,
                 ),
               ),
             ),
@@ -78,7 +78,7 @@ Widget addressItem(BuildContext context, AddressModel addressModel) {
                 color: ColorManager.titleColor,
                 fontSize: adjustValue(
                   context,
-                  FontSize.s10,
+                  FontSize.s8,
                 ),
               ),
             ),
