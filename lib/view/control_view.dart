@@ -14,7 +14,7 @@ class ControlView extends GetWidget<ControlViewModel> {
       builder: (controller) => Scaffold(
         backgroundColor: ColorManager.white,
         body: controller.currentScreen,
-        bottomNavigationBar: bottomNavigationBar(),
+        bottomNavigationBar: bottomNavigationBar(context),
         floatingActionButton: FloatingActionButton(
           backgroundColor: ColorManager.primary,
           onPressed: () {},

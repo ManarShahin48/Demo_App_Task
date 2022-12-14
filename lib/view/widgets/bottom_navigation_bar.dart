@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-Widget bottomNavigationBar() {
+Widget bottomNavigationBar(BuildContext context) {
   return GetBuilder<ControlViewModel>(
     init: ControlViewModel(),
     builder: (controller) => BottomNavigationBar(
@@ -12,53 +12,57 @@ Widget bottomNavigationBar() {
         BottomNavigationBarItem(
           activeIcon: SvgPicture.asset(
             IconManager.grocery,
-            height: SizeManager.s30,
+            height: adjustHeightValue(context, SizeManager.s20),
             color: ColorManager.primary,
           ),
           label: 'Grocery',
           icon: SvgPicture.asset(
             IconManager.grocery,
-            height: SizeManager.s30,
+            height: adjustHeightValue(context, SizeManager.s20),
           ),
         ),
         BottomNavigationBarItem(
           activeIcon: SvgPicture.asset(
             IconManager.news,
-            height: SizeManager.s30,
+            height: adjustHeightValue(context, SizeManager.s20),
             color: ColorManager.primary,
           ),
           label: 'News',
           icon: SvgPicture.asset(
             IconManager.news,
-            height: SizeManager.s30,
+            height: adjustHeightValue(context, SizeManager.s20),
           ),
         ),
         BottomNavigationBarItem(
           activeIcon: SvgPicture.asset(
             IconManager.favorite,
-            height: SizeManager.s30,
+            height: adjustHeightValue(context, SizeManager.s20),
             color: ColorManager.primary,
           ),
           label: 'Favorite',
           icon: SvgPicture.asset(
             IconManager.favorite,
-            height: SizeManager.s30,
+            height: adjustHeightValue(context, SizeManager.s20),
           ),
         ),
         BottomNavigationBarItem(
           activeIcon: SvgPicture.asset(
             IconManager.wallet,
-            height: SizeManager.s30,
+            height: adjustHeightValue(context, SizeManager.s20),
             color: ColorManager.primary,
           ),
           label: 'Cart',
           icon: SvgPicture.asset(
             IconManager.wallet,
-            height: SizeManager.s30,
+            height: adjustHeightValue(context, SizeManager.s20),
           ),
         ),
       ],
-      selectedIconTheme: const IconThemeData(size: SizeManager.s40),
+      selectedIconTheme: IconThemeData(
+          size: adjustValue(
+        context,
+        SizeManager.s30,
+      )),
       currentIndex: controller.navigatorValue,
       onTap: (index) {
         controller.changeSelectedValue(index);

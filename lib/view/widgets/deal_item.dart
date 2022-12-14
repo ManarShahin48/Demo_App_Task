@@ -61,7 +61,7 @@ Widget dealItem(DealModel dealModel) {
               ),
               Text(
                 dealModel.discountPrice,
-                style: TextStyle(
+                style: const TextStyle(
                   decoration: TextDecoration.lineThrough,
                   color: ColorManager.categoryName,
                   fontSize: FontSize.s15,

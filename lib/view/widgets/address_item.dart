@@ -2,30 +2,45 @@ import 'package:demo_app_task/model/address_model.dart';
 import 'package:demo_app_task/utils/utils.dart';
 import 'package:flutter/cupertino.dart';
 
-Widget addressItem(AddressModel addressModel) {
+Widget addressItem(BuildContext context, AddressModel addressModel) {
   return Container(
-    height: SizeManager.s80,
-    width: SizeManager.s190,
+    height: adjustHeightValue(
+      context,
+      SizeManager.s70,
+    ),
+    width: adjustWidthValue(
+      context,
+      SizeManager.s162,
+    ),
     decoration: BoxDecoration(
       color: ColorManager.white,
-      borderRadius: const BorderRadius.all(
-        Radius.circular(SizeManager.s15),
+      borderRadius: BorderRadius.all(
+        Radius.circular(adjustValue(context, SizeManager.s15)),
       ),
       border: Border.all(
         color: ColorManager.addressStroke,
-        width: SizeManager.s2,
+        width: adjustValue(context, SizeManager.s2),
       ),
     ),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Container(
-          height: SizeManager.s60,
-          width: SizeManager.s60,
-          decoration: const BoxDecoration(
+          height: adjustHeightValue(
+            context,
+            SizeManager.s45,
+          ),
+          width: adjustWidthValue(
+            context,
+            SizeManager.s45,
+          ),
+          decoration: BoxDecoration(
             color: ColorManager.addressSqr,
             borderRadius: BorderRadius.all(
-              Radius.circular(SizeManager.s15),
+              Radius.circular(adjustValue(
+                context,
+                SizeManager.s12,
+              )),
             ),
           ),
         ),
@@ -38,7 +53,10 @@ Widget addressItem(AddressModel addressModel) {
               overflow: TextOverflow.ellipsis,
               style: getPoppinsBoldStyle(
                 color: ColorManager.titleColor,
-                fontSize: FontSize.s14,
+                fontSize: adjustValue(
+                  context,
+                  FontSize.s12,
+                ),
               ),
             ),
             Text(
@@ -46,15 +64,22 @@ Widget addressItem(AddressModel addressModel) {
               overflow: TextOverflow.ellipsis,
               style: getPoppinsRegularStyle(
                 color: ColorManager.titleColor,
-                fontSize: FontSize.s12,
+                fontSize: adjustValue(
+                  context,
+                  FontSize.s10,
+                ),
               ),
             ),
             Text(
               addressModel.title3,
+              maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: getPoppinsRegularStyle(
                 color: ColorManager.titleColor,
-                fontSize: FontSize.s12,
+                fontSize: adjustValue(
+                  context,
+                  FontSize.s10,
+                ),
               ),
             ),
           ],

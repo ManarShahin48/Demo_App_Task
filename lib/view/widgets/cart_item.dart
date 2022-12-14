@@ -21,15 +21,21 @@ class CartItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(
-        left: PaddingManager.p20,
-        right: PaddingManager.p20,
+      padding: EdgeInsets.only(
+        left: adjustValue(context, PaddingManager.p20),
+        right: adjustValue(context, PaddingManager.p20),
       ),
       child: Row(
         children: [
           Container(
-            height: SizeManager.s60,
-            width: SizeManager.s60,
+            height: adjustHeightValue(
+              context,
+              SizeManager.s50,
+            ),
+            width: adjustWidthValue(
+              context,
+              SizeManager.s50,
+            ),
             decoration: BoxDecoration(
               color: color,
               borderRadius: const BorderRadius.all(
@@ -37,8 +43,8 @@ class CartItem extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(
-            width: SizeManager.s20,
+          SizedBox(
+            width: adjustWidthValue(context, SizeManager.s20),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,14 +54,20 @@ class CartItem extends StatelessWidget {
                 name,
                 style: getPoppinsBoldStyle(
                   color: ColorManager.categoryName,
-                  fontSize: FontSize.s12,
+                  fontSize: adjustValue(
+                    context,
+                    FontSize.s14,
+                  ),
                 ),
               ),
               Text(
                 data,
                 style: getPoppinsMediumStyle(
                   color: ColorManager.categoryName,
-                  fontSize: FontSize.s12,
+                  fontSize: adjustValue(
+                    context,
+                    FontSize.s12,
+                  ),
                 ),
               ),
               price,
